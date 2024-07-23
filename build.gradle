@@ -21,7 +21,7 @@ sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
 
 micronaut {
-    version("4.0.2")
+    version("4.5.0")
     processing {
         incremental(true)
         module(project.name)
@@ -32,7 +32,7 @@ micronaut {
 configurations.configureEach { config ->
     if (config.name.startsWith("test")) {
         config.resolutionStrategy.dependencySubstitution {
-            substitute(module("io.micronaut:micronaut-jackson-databind")).using(module("io.micronaut.serde:micronaut-serde-jackson:2.2.0"))
+            substitute(module("io.micronaut:micronaut-jackson-databind")).using(module("io.micronaut.serde:micronaut-serde-jackson:2.10.2"))
         }
     }
 }
@@ -42,7 +42,7 @@ dependencies {
     compileOnly "io.micronaut:micronaut-inject-java"
     compileOnly "io.micronaut.serde:micronaut-serde-jackson"
 
-    api "com.arangodb:arangodb-java-driver:7.1.0"
+    api "com.arangodb:arangodb-java-driver:7.7.1"
 
     implementation "io.micronaut:micronaut-management"
     implementation "io.projectreactor:reactor-core"
@@ -50,7 +50,7 @@ dependencies {
     testAnnotationProcessor "io.micronaut:micronaut-inject-java"
     testAnnotationProcessor "io.micronaut.serde:micronaut-serde-processor"
 
-    testRuntimeOnly "com.arangodb:jackson-dataformat-velocypack:4.1.0"
+    testRuntimeOnly "com.arangodb:jackson-dataformat-velocypack:4.3.0"
     testRuntimeOnly "ch.qos.logback:logback-classic:1.4.9"
     testImplementation "org.testcontainers:junit-jupiter:1.17.6"
     testImplementation "com.github.goodforgod:arangodb-testcontainer:3.0.1"
