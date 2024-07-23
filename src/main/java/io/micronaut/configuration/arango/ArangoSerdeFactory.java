@@ -8,6 +8,7 @@ import io.micronaut.context.annotation.Secondary;
 import io.micronaut.core.serialize.exceptions.SerializationException;
 import io.micronaut.serde.ObjectMapper;
 import jakarta.inject.Singleton;
+
 import java.io.IOException;
 
 /**

@@ -10,6 +10,7 @@ import io.micronaut.core.annotation.Nullable;
 import io.micronaut.runtime.context.scope.Refreshable;
 import jakarta.inject.Named;
 import jakarta.inject.Singleton;
+
 import javax.net.ssl.SSLContext;
 
 /**

@@ -7,10 +7,11 @@ import io.micronaut.context.annotation.Requires;
 import io.micronaut.core.annotation.Internal;
 import io.micronaut.runtime.exceptions.ApplicationStartupException;
 import jakarta.annotation.PostConstruct;
-import java.time.Duration;
-import java.util.concurrent.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.time.Duration;
+import java.util.concurrent.*;
 
 /**
  * ArangoDB database initialization

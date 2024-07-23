@@ -1,8 +1,5 @@
 package io.micronaut.configuration.arango.health;
 
-import static io.micronaut.core.util.StringUtils.isEmpty;
-import static io.micronaut.health.HealthStatus.*;
-
 import com.arangodb.ArangoDB;
 import com.arangodb.Request;
 import com.arangodb.Response;
@@ -19,16 +16,20 @@ import io.micronaut.management.health.indicator.HealthIndicator;
 import io.micronaut.management.health.indicator.HealthResult;
 import jakarta.inject.Inject;
 import jakarta.inject.Singleton;
+import org.reactivestreams.Publisher;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import reactor.core.publisher.Mono;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import org.reactivestreams.Publisher;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import reactor.core.publisher.Mono;
+
+import static io.micronaut.core.util.StringUtils.isEmpty;
+import static io.micronaut.health.HealthStatus.*;
 
 /**
  * A {@link HealthIndicator} for ArangoDB cluster. Indicates health of the

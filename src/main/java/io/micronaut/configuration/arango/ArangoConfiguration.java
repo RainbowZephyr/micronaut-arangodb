@@ -1,13 +1,10 @@
 package io.micronaut.configuration.arango;
 
-import static io.micronaut.configuration.arango.ArangoSettings.SYSTEM_DATABASE;
-
 import com.arangodb.Protocol;
 import com.arangodb.config.ArangoConfigProperties;
 import com.arangodb.config.HostDescription;
 import com.arangodb.entity.LoadBalancingStrategy;
 import com.arangodb.internal.ArangoDefaults;
-import com.arangodb.internal.InternalArangoDBBuilder;
 import io.micronaut.configuration.arango.ssl.ArangoSSLConfiguration;
 import io.micronaut.context.annotation.ConfigurationBuilder;
 import io.micronaut.context.annotation.ConfigurationProperties;
@@ -15,12 +12,15 @@ import io.micronaut.context.annotation.Requires;
 import io.micronaut.context.exceptions.ConfigurationException;
 import io.micronaut.core.util.CollectionUtils;
 import io.micronaut.core.util.StringUtils;
+
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.Properties;
 import java.util.stream.Collectors;
+
+import static io.micronaut.configuration.arango.ArangoSettings.SYSTEM_DATABASE;
 
 /**
  * Abstract ArangoDB configuration class.
@@ -171,7 +171,6 @@ public class ArangoConfiguration {
 
     /**
      * @see ArangoProperties
-     * @see InternalArangoDBBuilder
      * @return client configuration properties
      */
     public Properties getProperties() {
